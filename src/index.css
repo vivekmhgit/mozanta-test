@@ -1,13 +1,63 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.gallery-container {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.thumbnail {
+  margin: auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.thumbnail img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+  transition: ease;
+}
+
+.thumbnail img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.details-container {
+  /* text-align: center; */
+  color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
+}
+.details-title {
+  font-size: larger;
+  font-weight: bold;
+  padding: 5px;
+  margin: auto;
+}
+.details-container img {
+  width: 30%;
+  margin: auto;
+}
+.details-container img:hover {
+  width: 30%;
+  margin: auto;
+  transform: scale(1.01);
+}
+.details-container button {
+  margin: auto;
+}
+button:hover {
+  opacity: 0.7;
+  transform: scale(1.1);
 }
