@@ -1,7 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
-import test from "../../../src/test.jpg";
-import test2 from "../../../src/test2.jpg";
+import { IoIosThumbsUp } from "react-icons/io";
+import { IoIosThumbsDown } from "react-icons/io";
 
 const customDialogStyles = {
   content: {
@@ -30,11 +30,18 @@ export const ImageDetails = ({ isModalOpen, image, handleCloseModal }) => {
         >
           x
         </button>
-        <div className='details-title'> Title</div>
-        <img src={test} alt='test' />
-        <h6>Desc</h6>
-        <h6>Upvotes-</h6>
-        <h6>Downvotes-</h6>
+        <div className='details-title'>{image.title}</div>
+        <img src={image.link} alt='loading...' />
+        <h6>{image.description}</h6>
+        <h6>
+          Upvotes - {image.ups}
+          <IoIosThumbsUp color='#ec407a'></IoIosThumbsUp>
+        </h6>
+        <h6>
+          Downvotes - {image.downs}
+          <IoIosThumbsDown color='#ec407a'></IoIosThumbsDown>
+        </h6>
+        <h6>Score - {image.score}</h6>
       </div>
     </Modal>
   );
