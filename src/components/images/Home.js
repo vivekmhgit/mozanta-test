@@ -10,7 +10,7 @@ export const Home = () => {
 
   // to implement api request on page load
   useEffect(() => {
-    // fetchImages();
+    fetchImages();
   }, []);
 
   // fn using axios to fetch data
