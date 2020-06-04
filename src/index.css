@@ -7,10 +7,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #f0f0f0;
 }
-.viral-checkbox {
-  text-align: end;
-  margin-right: 10px;
+.filters {
+  display: flex;
+  padding: 10px;
 }
+.viral-checkbox {
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.select-box {
+  color: #ec407a;
+  width: 25%;
+}
+
 .gallery-container {
   padding: 20px;
   display: flex;

@@ -2,7 +2,7 @@ import React from "react";
 
 export const ViralCheckbox = ({ isViralChecked, onViralToggle }) => {
   return (
-    <form>
+    <form className='viral-checkbox'>
       <p>
         <label>
           <input
