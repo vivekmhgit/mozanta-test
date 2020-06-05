@@ -1,8 +1,10 @@
 import React from "react";
+import { BsFilter } from "react-icons/bs";
 
 export const SectionFilter = ({ section, handleSectionChange }) => {
   return (
     <div className='select-box'>
+      <BsFilter />
       Section
       <select
         className='browser-default'

@@ -13,6 +13,9 @@ export const Home = () => {
   const [section, setSection] = useState("hot");
   const [sort, setSort] = useState("viral");
   const [window, setWindow] = useState("day");
+  const [isRisingEnabled, setIsRisingEnabled] = useState(false);
+  const [isCheckboxEnabled, setIsCheckboxEnabled] = useState(false);
+  const [isWindowFilterEnabled, setIsWindowFilterEnabled] = useState(false);
 
   // to implement api request
   useEffect(() => {
@@ -33,12 +36,21 @@ export const Home = () => {
       .then((response) => {
         setImagesData(response.data.data);
       })
-      .catch((error) => {});
+      .catch((error) => {
+        console.log("some error occured");
+      });
   }, [section, sort, window, isViralChecked]);
 
   // fns to set filter values
   const handleSectionChange = (e) => {
     setSection(e.target.value);
+
+    const isUser = e.target.value === "user" ? true : false;
+    setIsRisingEnabled(isUser);
+    setIsCheckboxEnabled(isUser);
+
+    const isTop = e.target.value === "top" ? true : false;
+    setIsWindowFilterEnabled(isTop);
   };
   const handleSortChange = (e) => {
     setSort(e.target.value);
@@ -57,12 +69,21 @@ export const Home = () => {
           section={section}
           handleSectionChange={handleSectionChange}
         />
-        <SortFilter sort={sort} handleSortChange={handleSortChange} />
-        <WindowFilter window={window} handleWindowChange={handleWindowChange} />
+        <SortFilter
+          sort={sort}
+          handleSortChange={handleSortChange}
+          isRisingEnabled={isRisingEnabled}
+        />
+        <WindowFilter
+          window={window}
+          handleWindowChange={handleWindowChange}
+          isWindowFilterEnabled={isWindowFilterEnabled}
+        />
 
         <ViralCheckbox
           isViralChecked={isViralChecked}
           onViralToggle={handleViralChecked}
+          isCheckboxEnabled={isCheckboxEnabled}
         />
       </div>
       <div className='gallery-container'>

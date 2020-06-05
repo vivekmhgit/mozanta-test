@@ -22,6 +22,7 @@ export const ImageDetails = ({ isModalOpen, image, handleCloseModal }) => {
       isOpen={isModalOpen}
       onRequestClose={handleCloseModal}
       style={customDialogStyles}
+      ariaHideApp={false}
     >
       <div className='details-container'>
         <button

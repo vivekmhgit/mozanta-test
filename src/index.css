@@ -19,6 +19,24 @@ body {
 .select-box {
   color: #ec407a;
   width: 25%;
+  font-weight: 700;
+  margin: 10px;
+}
+select {
+  background-color: #424242;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 10px;
+}
+select:disabled {
+  color: white;
+  cursor: not-allowed;
+}
+option {
+  background-color: #424242;
+  color: white;
+  cursor: pointer;
 }
 
 .gallery-container {
@@ -26,6 +44,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  margin: auto;
 }
 .thumbnail {
   margin: auto;
@@ -34,9 +53,7 @@ body {
   border: 1px solid #ddd;
   border-radius: 4px;
   margin-bottom: 20px;
-  /* max-width: 300px; */
   width: 250px;
-  /* max-height: 200px; */
 }
 .thumbnail img {
   padding: 5px;
@@ -61,7 +78,6 @@ body {
   align-items: flex-end;
 }
 .details-container {
-  /* text-align: center; */
   color: white;
   width: 100%;
   display: flex;
@@ -98,6 +114,11 @@ button:hover {
 .checkbox-pink[type="checkbox"].filled-in:checked + span:not(.lever):after {
   border: 2px solid #ec407a;
   background-color: #ec407a;
+}
+.checkbox-pink[type="checkbox"].filled-in:disabled + span:not(.lever):after {
+  border: 2px solid grey;
+  background-color: grey;
+  cursor: not-allowed;
 }
 .no-content {
   margin: auto;
